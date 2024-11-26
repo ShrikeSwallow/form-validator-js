@@ -55,8 +55,21 @@ export const generateForm = () => {
   confirmPasswordContainer.appendChild(confirmPasswordInput);
   fieldset.appendChild(confirmPasswordContainer);
 
-  // Append "rigid" elements to the main body
+  // Postcode field
+  const postcodeContainer = document.createElement("div");
+  postcodeContainer.classList.add("form-field", "field-postcode");
+  const postcodeInput = document.createElement("input");
+  postcodeInput.type = "text";
+  postcodeInput.name = "postcode";
+  postcodeInput.id = "postcode";
+  const postcodeLabel = document.createElement("label");
+  postcodeLabel.setAttribute("for", postcodeInput.id);
+  postcodeLabel.textContent = "Postcode:";
+  postcodeContainer.appendChild(postcodeLabel);
+  postcodeContainer.appendChild(postcodeInput);
+  fieldset.appendChild(postcodeContainer);
 
+  // Append "rigid" elements to the main body
   form.appendChild(fieldset);
   main.appendChild(form);
 };
