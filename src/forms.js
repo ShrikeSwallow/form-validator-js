@@ -24,6 +24,37 @@ export const generateForm = () => {
   emailContainer.appendChild(emailInput);
   fieldset.appendChild(emailContainer);
 
+  // Password field
+  const passwordContainer = document.createElement("div");
+  passwordContainer.classList.add("form-field", "field-password");
+  const passwordInput = document.createElement("input");
+  passwordInput.type = "password";
+  passwordInput.name = "password";
+  passwordInput.id = "password";
+  const passwordLabel = document.createElement("label");
+  passwordLabel.setAttribute("for", passwordInput.id);
+  passwordLabel.textContent = "Password:";
+  passwordContainer.appendChild(passwordLabel);
+  passwordContainer.appendChild(passwordInput);
+  fieldset.appendChild(passwordContainer);
+
+  // Confirm password field
+  const confirmPasswordContainer = document.createElement("div");
+  confirmPasswordContainer.classList.add(
+    "form-field",
+    "field-confirm-password"
+  );
+  const confirmPasswordInput = document.createElement("input");
+  confirmPasswordInput.type = "password";
+  confirmPasswordInput.name = "confirm-password";
+  confirmPasswordInput.id = "confirm-password";
+  const confirmPasswordLabel = document.createElement("label");
+  confirmPasswordLabel.setAttribute("for", confirmPasswordInput.id);
+  confirmPasswordLabel.textContent = "Confirm Password:";
+  confirmPasswordContainer.appendChild(confirmPasswordLabel);
+  confirmPasswordContainer.appendChild(confirmPasswordInput);
+  fieldset.appendChild(confirmPasswordContainer);
+
   // Append "rigid" elements to the main body
 
   form.appendChild(fieldset);
