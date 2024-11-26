@@ -94,6 +94,21 @@ export const generateForm = () => {
   postcodeContainer.appendChild(postcodeInput);
   fieldset.appendChild(postcodeContainer);
 
+  // Buttons field
+  const buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("form-field", "field-buttons");
+  const submitButton = document.createElement("button");
+  submitButton.classList.add("submit-button");
+  submitButton.type = "submit";
+  submitButton.textContent = "Sign Up";
+  const resetButton = document.createElement("button");
+  resetButton.classList.add("reset-button");
+  resetButton.type = "reset";
+  resetButton.textContent = "Clear";
+  buttonsContainer.appendChild(submitButton);
+  buttonsContainer.appendChild(resetButton);
+  fieldset.appendChild(buttonsContainer);
+
   // Append "rigid" elements to the main body
   form.appendChild(fieldset);
   main.appendChild(form);
