@@ -61,7 +61,7 @@ export const generateForm = () => {
   confirmPasswordContainer.appendChild(confirmPasswordInput);
   fieldset.appendChild(confirmPasswordContainer);
 
-  // Country dropdown
+  // Country dropdown field
   const countriesContainer = document.createElement("div");
   countriesContainer.classList.add("form-field", "field-select");
   const countriesList = document.createElement("select");
@@ -73,6 +73,10 @@ export const generateForm = () => {
     option.textContent = country.name;
     countriesList.appendChild(option);
   });
+  const countriesLabel = document.createElement("label");
+  countriesLabel.setAttribute("for", countriesList.id);
+  countriesLabel.textContent = "Country:";
+  countriesContainer.appendChild(countriesLabel);
   countriesContainer.appendChild(countriesList);
   fieldset.appendChild(countriesContainer);
 
