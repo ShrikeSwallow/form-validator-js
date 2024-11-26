@@ -1,3 +1,9 @@
+const countries = [
+  { name: "Choose a country...", code: "" },
+  { name: "United Kingdom", code: "GB" },
+  { name: "Poland", code: "PL" },
+];
+
 export const generateForm = () => {
   // Create the "rigid" elements
   const main = document.querySelector("main");
@@ -54,6 +60,21 @@ export const generateForm = () => {
   confirmPasswordContainer.appendChild(confirmPasswordLabel);
   confirmPasswordContainer.appendChild(confirmPasswordInput);
   fieldset.appendChild(confirmPasswordContainer);
+
+  // Country dropdown
+  const countriesContainer = document.createElement("div");
+  countriesContainer.classList.add("form-field", "field-select");
+  const countriesList = document.createElement("select");
+  countriesList.name = "country";
+  countriesList.id = "country";
+  countries.forEach((country) => {
+    const option = document.createElement("option");
+    option.value = country.code;
+    option.textContent = country.name;
+    countriesList.appendChild(option);
+  });
+  countriesContainer.appendChild(countriesList);
+  fieldset.appendChild(countriesContainer);
 
   // Postcode field
   const postcodeContainer = document.createElement("div");
