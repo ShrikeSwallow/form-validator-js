@@ -1,1 +1,8 @@
 @import "../node_modules/modern-normalize/";
+
+input {
+  outline: 0;
+}
+input:invalid {
+  border: 1px dashed red;
+}
